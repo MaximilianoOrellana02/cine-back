@@ -67,7 +67,7 @@ export async function crearPreferencia(ordenId) {
                 failure: `${process.env.FRONTEND_URL}/orden/${orden.id}`,
             },
             //auto_return: "approved",
-            notification_url: `${process.env.BACKEND_URL}/api/pagos/webhook`,
+            //notification_url: `${process.env.BACKEND_URL}/api/pagos/webhook`,
             statement_descriptor: "CINE ALFA",
             expires: true,
             expiration_date_to: new Date(orden.expiraEn).toISOString(),
