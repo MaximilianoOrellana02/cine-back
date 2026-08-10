@@ -69,6 +69,7 @@ function firmaValida(req) {
 
     console.log('calculado:', calculado);
     console.log('recibido: ', hash);
+    console.log('headers completos:', JSON.stringify(req.headers, null, 2));
 
     return crypto.timingSafeEqual(bufCalculado, bufHash);
 }
