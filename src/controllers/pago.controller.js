@@ -13,9 +13,9 @@ export async function postPreferencia(req, res, next) {
 
 export async function postWebhook(req, res) {
     console.log("🔔 Webhook recibido de MercadoPago!");
-    console.log("Query:", req.query);
-    console.log("Headers:", req.headers["x-signature"], req.headers["x-request-id"]);
-    console.log("Body:", req.body);
+    console.log('x-signature:', JSON.stringify(req.headers['x-signature']));
+    console.log('x-request-id:', JSON.stringify(req.headers['x-request-id']));
+    console.log('data.id:', JSON.stringify(req.query['data.id']));
 
     res.status(200).json("ok");
 
