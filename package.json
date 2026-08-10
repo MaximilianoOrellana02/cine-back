@@ -13,7 +13,8 @@
     "lint:fix": "eslint src --fix",
     "migrate": "sequelize-cli db:migrate",
     "migrate:undo": "sequelize-cli db:migrate:undo",
-    "migrate:status": "sequelize-cli db:migrate:status"
+    "migrate:status": "sequelize-cli db:migrate:status",
+    "seed:prod": "node --env-file=.env.production src/seeders/seed.js"
   },
   "keywords": [],
   "author": "",
