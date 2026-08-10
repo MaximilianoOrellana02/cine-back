@@ -59,5 +59,16 @@ function firmaValida(req) {
     const plantilla = `id:${String(dataId).toLowerCase()};request-id:${requestId};ts:${ts};`;
     const calculado = crypto.createHmac("sha256", secreto).update(plantilla).digest("hex");
 
-    return crypto.timingSafeEqual(Buffer.from(calculado), Buffer.from(hash));
+    const bufCalculado = Buffer.from(calculado, 'hex');
+    const bufHash = Buffer.from(hash, 'hex');
+
+    if (bufCalculado.length !== bufHash.length) {
+        console.warn('Longitud de hash distinta');
+        return false;
+    }
+
+    console.log('calculado:', calculado);
+    console.log('recibido: ', hash);
+
+    return crypto.timingSafeEqual(bufCalculado, bufHash);
 }
