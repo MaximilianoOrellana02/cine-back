@@ -10,8 +10,8 @@ async function iniciar() {
     await conectarDB();
 
     const requeridas = [
-        'DB_NAME', 'DB_USER', 'JWT_SECRET',
-        'MP_ACCESS_TOKEN', 'FRONTEND_URL', 'BACKEND_URL',
+        'DB_NAME', 'DB_USER', 'JWT_SECRET', 'MP_ACCESS_TOKEN',
+        'FRONTEND_URL', 'BACKEND_URL', 'TMDB_TOKEN',
     ];
     const faltantes = requeridas.filter((v) => !process.env[v]);
 

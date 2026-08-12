@@ -6,6 +6,7 @@ import combosRoutes from "./combos.routes.js"
 import authRoutes from "./auth.routes.js"
 import ticketRoutes from "./ticket.routes.js"
 import pagoRoutes from "./pago.routes.js"
+import adminRoutes from "./admin.routes.js"
 
 const router = Router()
 
@@ -16,5 +17,6 @@ router.use("/combos", combosRoutes)
 router.use("/auth", authRoutes)
 router.use("/tickets", ticketRoutes) //Borrar en produccion
 router.use("/pagos", pagoRoutes)
+router.use("/admin", adminRoutes)
 
 export default router

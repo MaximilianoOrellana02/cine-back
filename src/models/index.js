@@ -11,6 +11,7 @@ import Orden from "./Orden.js";
 import ItemOrden from "./ItemOrden.js";
 import Ticket from "./Ticket.js";
 import Pago from "./Pago.js";
+import Precio from "./Precio.js";
 
 Sala.hasMany(Butaca, { foreignKey: "salaId", as: "butacas", onDelete: "CASCADE" });
 Butaca.belongsTo(Sala, { foreignKey: "salaId", as: "sala" });
@@ -78,4 +79,5 @@ export {
     ItemOrden,
     Ticket,
     Pago,
+    Precio
 };

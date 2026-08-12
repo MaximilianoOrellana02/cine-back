@@ -13,9 +13,6 @@ export async function postPreferencia(req, res, next) {
 
 export async function postWebhook(req, res) {
     console.log("🔔 Webhook recibido de MercadoPago!");
-    console.log('x-signature:', JSON.stringify(req.headers['x-signature']));
-    console.log('x-request-id:', JSON.stringify(req.headers['x-request-id']));
-    console.log('data.id:', JSON.stringify(req.query['data.id']));
 
     res.status(200).json("ok");
 
@@ -35,7 +32,6 @@ export async function postWebhook(req, res) {
 
 function firmaValida(req) {
     const secreto = process.env.MP_WEBHOOK_SECRET;
-    console.log('SECRETO:', JSON.stringify(secreto));
 
     if (!secreto) return true;
 
@@ -66,10 +62,6 @@ function firmaValida(req) {
         console.warn('Longitud de hash distinta');
         return false;
     }
-
-    console.log('calculado:', calculado);
-    console.log('recibido: ', hash);
-    console.log('headers completos:', JSON.stringify(req.headers, null, 2));
 
     return crypto.timingSafeEqual(bufCalculado, bufHash);
 }

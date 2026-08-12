@@ -58,6 +58,11 @@ Pelicula.init({
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: true
+    },
+    formatos: {
+        type: DataTypes.ARRAY(DataTypes.STRING(2)),
+        allowNull: false,
+        defaultValue: ["2D"]
     }
 }, {
     sequelize,
