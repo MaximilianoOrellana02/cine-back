@@ -5,6 +5,8 @@ import { detalleQuerySchema, peliculaIdParamSchema } from "../validators/pelicul
 
 const router = Router()
 
+router.get("/", peliculaController.getCartelera)
+
 router.get(
     "/:id",
     validarParams(peliculaIdParamSchema),

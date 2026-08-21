@@ -75,3 +75,10 @@ function agruparPorFormatoIdioma(funciones) {
 
     return Array.from(mapa.values());
 }
+
+export async function obtenerCartelera() {
+    return await Pelicula.findAll({
+        where: { activa: true },
+        order: [["fechaEstreno", "DESC"]],
+    });
+}

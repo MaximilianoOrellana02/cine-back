@@ -19,3 +19,12 @@ export async function getDetalle(req, res, next) {
         next(error)
     }
 }
+
+export async function getCartelera(req, res, next) {
+    try {
+        const peliculas = await peliculaService.obtenerCartelera();
+        res.json(peliculas);
+    } catch (error) {
+        next(error);
+    }
+}
